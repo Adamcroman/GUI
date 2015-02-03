@@ -2,13 +2,13 @@
 
 {% block content %}
   <h2>Commands</h2>
-  <form action="{{ url_for('contact') }}" method=post>
+  <form action="{{ url_for('commands') }}" method=post>
   
     {{ form.minion.label }}
     {{ form.minion }}
 
-    {{ form.command.label }}
-    {{ form.command }}
+    {{ form.module.label }}
+    {{ form.module }}
 
     {{ form.args.label }}
     {{ form.args }}
