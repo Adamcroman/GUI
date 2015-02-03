@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, flash
 from forms import CommandForm
+from subprocess import call
 
 app = Flask(__name__)
 
@@ -22,6 +23,9 @@ def commands():
     return redirect('/index')
   return render_template('commands.html', title='Submit Command', form=form)
 
+@app.route('/vltdevrestart')
+def vltdevrestart():
+  call = subprocess.call("sudo supervisorctl restart all"  , shell=True)
 
 #  if request.method == 'POST':
 #    return 'Form Posted'
