@@ -4,8 +4,6 @@ from subprocess import call
 
 app = Flask(__name__)
 
-app.secret_key = 'p1n3M@rtin'
-
 @app.route('/')
 def home():
   return render_template('home.html')
