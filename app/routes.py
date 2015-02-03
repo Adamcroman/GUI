@@ -25,7 +25,7 @@ def commands():
 
 @app.route('/vltdevrestart')
 def vltdevrestart():
-  call = subprocess.call("sudo supervisorctl restart all"  , shell=True)
+  call = subprocess.call("sudo salt 'vlt-dev' supervisord.restart all"  , shell=True)
 
 #  if request.method == 'POST':
 #    return 'Form Posted'
